@@ -38,7 +38,7 @@ jobs:
         run: az bicep build -f ${{ env.BICEP_FILE_PATH }}
 
       - name: Archive ARM Templates artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: bicep
@@ -71,7 +71,7 @@ jobs:
           npm run build
 
       - name: Archive SCM Frontend
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: scmfe

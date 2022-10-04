@@ -38,7 +38,7 @@ jobs:
         run: az bicep build -f ${{ env.BICEP_FILE_PATH }}
 
       - name: Archive bicep artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: drop
@@ -76,7 +76,7 @@ jobs:
           zip -r ${{ env.API_PACKAGE_NAME }} ./*
 
       - name: Archive dotnetcore package artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: drop

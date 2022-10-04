@@ -27,7 +27,7 @@ jobs:
       - run: npm install vuepress vuepress-plugin-code-copy
       - run: node_modules/.bin/vuepress build
       - name: Upload result of vuepress build
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: static-website
           path: .vuepress/dist
