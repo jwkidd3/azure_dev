@@ -366,7 +366,7 @@ As example you can compare your ARM Template with the following code snippet:
     "IPName": {
       "type": "string",
       "metadata": {
-        "description": "The name of the Azure IP adress artifact"
+        "description": "The name of the Azure IP address artifact"
       }
     }
   },
