@@ -200,7 +200,7 @@ We will try each of these to learn its haptic.
 
 1. We use the Azure Portal. You may find it strange to use a web portal that offers wizards and use it to process our template. However, when testing/developing templates errors will occur. In this case the portal offers immediate feedback e.g. for validation errors. So do:
 
-`[Azure Portal] -> '+' -> 'Template deployment' -> Create -> 'Build your own template in the editor'`
+`[Azure Portal] -> '+' -> 'Template deployment (deploy using custom templates)' -> Create -> 'Build your own template in the editor'`
 
 2. Copy and paste the above ARM template into the portal editor window
 
@@ -211,7 +211,8 @@ We will try each of these to learn its haptic.
 :::tip
 📝 This page contains:
 
-- fixed elements: The deployment scope - where should your resources be deployed (subscription & RG) - dynamic elements: The parameters - defined in the template will define the 'look' and hence what the user needs to provide.  
+- fixed elements: The deployment scope - where should your resources be deployed (subscription & RG)
+- dynamic elements: The parameters - defined in the template will define the 'look' and hence what the user needs to provide.  
   :::
 
 ![Template Deployment Parameters](./images/templatedeploymentparameters.png)
@@ -352,7 +353,7 @@ Azure resources go into a resource group. A resource group is located in an azur
 
 ### 4. Create a parameter
 
-Create a parameter so that a user can enter the name of the IP Address artefact.  
+Create a parameter so that a user can enter the name of the IP Address artifact.  
 Therefore add a parameter section to the template. Checkout [Make template reusable](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-add-parameters?tabs=azure-powershell#make-template-reusable) to see how it is done.
 
 As example you can compare your ARM Template with the following code snippet:
@@ -365,7 +366,7 @@ As example you can compare your ARM Template with the following code snippet:
     "IPName": {
       "type": "string",
       "metadata": {
-        "description": "The name of the Azure IP adress artefact"
+        "description": "The name of the Azure IP adress artifact"
       }
     }
   },
