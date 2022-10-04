@@ -55,7 +55,7 @@ jobs:
           zip -r ${{ env.API_PACKAGE_NAME }} ./*
 
       - name: Archive api package
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: drop
@@ -93,7 +93,7 @@ jobs:
           zip -r ${{ env.RESIZER_PACKAGE_NAME }} ./*
 
       - name: Archive Resizer dotnetcore package artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: drop
@@ -116,7 +116,7 @@ jobs:
         run: az bicep build -f ${{ env.BICEP_FILE_PATH }}
 
       - name: Archive bicep file
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: drop
@@ -154,7 +154,7 @@ jobs:
           -n ${{ steps.createResourceGroupName.outputs.name }}
 
       - name: Download drop artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 
@@ -214,7 +214,7 @@ jobs:
           -n ${{ steps.createResourceGroupName.outputs.name }}
 
       - name: Download drop artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 

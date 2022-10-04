@@ -41,7 +41,7 @@ jobs:
         run: az bicep build -f ${{ env.BICEP_FILE_PATH }}
 
       - name: Archive artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: drop
@@ -67,7 +67,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Use Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.nuget/packages"
           key: ${{ runner.os }}-nuget-${{ hashFiles('./day5/apps/dotnetcore/Scm.Search/Adc.Scm.Search.Api/packages.lock.json') }}
@@ -85,7 +85,7 @@ jobs:
           zip -r ${{ env.API_PACKAGE_NAME }} ./*
 
       - name: Archive api dotnetcore package artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: drop
@@ -111,7 +111,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Use Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.nuget/packages"
           key: ${{ runner.os }}-nuget-${{ hashFiles('./day5/apps/dotnetcore/Scm.Search/Adc.Scm.Search.Indexer/packages.lock.json') }}
@@ -129,7 +129,7 @@ jobs:
           zip -r ${{ env.INDEXER_PACKAGE_NAME }} ./*
 
       - name: Archive indexer artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: drop
@@ -172,7 +172,7 @@ jobs:
           -n ${{ steps.createResourceGroupName.outputs.name }}
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 
@@ -202,7 +202,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 
@@ -223,7 +223,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 
@@ -273,7 +273,7 @@ jobs:
           -n ${{ steps.createResourceGroupName.outputs.name }}
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 
@@ -303,7 +303,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 
@@ -324,7 +324,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 

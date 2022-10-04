@@ -41,7 +41,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Use Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.nuget/packages"
           key: ${{ runner.os }}-nuget-${{ hashFiles('./day4/apps/dotnetcore/Scm/Adc.Scm.Api/packages.lock.json') }}
@@ -59,7 +59,7 @@ jobs:
           zip -r ${{ env.API_PACKAGE_NAME }} ./*
 
       - name: Archive dotnetcore package artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: drop
@@ -83,7 +83,7 @@ jobs:
         run: az bicep build -f ${{ env.BICEP_FILE_PATH }}
 
       - name: Archive artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: drop
@@ -109,7 +109,7 @@ jobs:
         run: echo "::set-output name=name::${{ env.RESOURCE_GROUP_NAME }}-${{ env.GITHUB_REPOSITORY_OWNER_PART }}"
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 
@@ -160,7 +160,7 @@ jobs:
         run: echo "::set-output name=name::${{ env.RESOURCE_GROUP_NAME }}-${{ env.GITHUB_REPOSITORY_OWNER_PART }}"
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 

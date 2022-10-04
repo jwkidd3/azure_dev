@@ -41,7 +41,7 @@ jobs:
         run: az bicep build -f ${{ env.BICEP_FILE_PATH }}
 
       - name: Archive bicep file
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: drop
@@ -67,7 +67,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Use Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.nuget/packages"
           key: ${{ runner.os }}-nuget-${{ hashFiles('./day3/apps/dotnetcore/Scm.Resources/Adc.Scm.Resources.Api/packages.lock.json') }}
@@ -85,7 +85,7 @@ jobs:
           zip -r ${{ env.API_PACKAGE_NAME }} ./*
 
       - name: Archive api package
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: drop
@@ -111,7 +111,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Use Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.nuget/packages"
           key: ${{ runner.os }}-nuget-${{ hashFiles('./day3/apps/dotnetcore/Scm.Resources/Adc.Scm.Resources.ImageResizer/packages.lock.json') }}
@@ -129,7 +129,7 @@ jobs:
           zip -r ${{ env.RESIZER_PACKAGE_NAME }} ./*
 
       - name: Archive Resizer dotnetcore package artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: env.NEED_DEPLOY == 'true'
         with:
           name: drop
@@ -172,7 +172,7 @@ jobs:
           -n ${{ steps.createResourceGroupName.outputs.name }}
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 
@@ -191,7 +191,7 @@ jobs:
 
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 
@@ -212,7 +212,7 @@ jobs:
 
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 
@@ -267,7 +267,7 @@ jobs:
           -n ${{ steps.createResourceGroupName.outputs.name }}
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 
@@ -286,7 +286,7 @@ jobs:
 
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 
@@ -307,7 +307,7 @@ jobs:
 
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: drop
 
