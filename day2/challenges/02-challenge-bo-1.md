@@ -13,7 +13,7 @@ Now it's time to get familiar with our sample application. In this challenge you
 ![architecture_bo1](./images/architecture_bo1.png 'architecture_bo1')
 
 :::tip
-📝 Please check, that all the [prerequisites](challenge-0.md) are set up in your machine.
+📝 Please check, that all the [prerequisites](00-challenge-setup.md) are set up in your machine.
 :::
 
 ## Table Of Contents
