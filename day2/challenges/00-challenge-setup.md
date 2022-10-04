@@ -54,7 +54,7 @@ $ dotnet --list-sdks
 Download and install Node.js from <https://nodejs.org/en/download/>
 
 :::tip
-📝 Choose the LTS version (for this workshop: Node.JS 14).
+📝 Choose the LTS version (for this workshop: Node.JS 16).
 :::
 
 ![nodejs](./images/nodejs.png 'nodejs')
@@ -64,7 +64,7 @@ After the installation is complete, check if everything works as expected. Open 
 ```shell
 $ node --version
 
-v14.15.4 # or a similar version
+v16.17.1 # or a similar version
 
 $ npm
 
@@ -96,7 +96,7 @@ npm help npm      involved overview
 We will be using VueJS as our frontend framework. Install it from the command-line via npm:
 
 ```shell
-$ npm install -g @vue/cli@4.5.15
+$ npm install -g @vue/cli
 
 [...]
 [...]
@@ -104,7 +104,7 @@ $ npm install -g @vue/cli@4.5.15
 
 $ vue --version
 
-@vue/cli 4.5.15
+@vue/cli 5.0.8
 ```
 
 ## Azure CLI
@@ -123,8 +123,10 @@ A browser window will open, login to Azure and go back to the command prompt. Yo
 ```json
 {
   "cloudName": "AzureCloud",
+  "homeTenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "isDefault": false,
+  "managedByTenants": [],
   "name": "Your Subscription Name",
   "state": "Enabled",
   "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
@@ -142,9 +144,11 @@ A browser window will open, login to Azure and go back to the command prompt. Yo
 ```shell
 $ az account show
 {
-  "cloudName": "AzureCloud",
+  "environmentName": "AzureCloud",
+  "homeTenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "isDefault": false,
+  "managedByTenants": [],
   "name": "Your Subscription Name",
   "state": "Enabled",
   "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
