@@ -17,5 +17,3 @@ Here's the overview of the training. Happy hacking!
 - [Day 5 - Identity and Architectures](day5/README.md)
 - [Day 6 - Containerization](day6/README.md)
 - [Day 7 - Kubernetes](day7/README.md)
-
-## Contributing ##
