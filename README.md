@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Welcome to the Azure Developer Content/h1>
+  <h1>Welcome to the Azure Developer Content</h1>
 
 
 </div>
